@@ -1,18 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-import {Header} from "./Header/Header";
-import avatar from './img/new2.jpg'
-import s from "./Header/Header.module.scss";
-import React from "react";
-import {Sidebar} from "./Sidebar/Sidebar";
+import {Theme} from "./Theme/Theme";
+import {useState} from "react";
+import {Navigation} from "./Navigation/Navigation";
+import {Route, Routes} from "react-router-dom";
 import {Home} from "./Home/Home";
+import Sidebar from "./Sidebar/Sidebar";
+
 
 function App() {
+    const [theme, setTheme] = useState(true)
+    console.log(theme)
     return (
-        <div className={'container'}>
-            <Sidebar/>
-            <div className={'innerWrapper'}>
-                <Home/>
+        <div className={"container"}>
+            <div className={"innerWrapper"}>
+                <div className={"content"}>
+                    <Routes>
+                        <Route path={"/"} element={<Home/>}/>
+                    </Routes>
+                </div>
+                <div className={"navigation"}>
+                    <Sidebar/>
+                </div>
             </div>
         </div>
 )

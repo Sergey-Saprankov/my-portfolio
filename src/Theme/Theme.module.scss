@@ -1,0 +1,56 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin reduce {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+@mixin iconParam {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .innerWrapper {
+   @include flexCenter;
+   @include reduce;
+    background: #4b4b4b;
+
+    .iconDarkContainer {
+      border: 3px solid #fff;
+      @include flexCenter;
+      @include reduce;
+
+      .darkIcon {
+        @include iconParam;
+        &:hover {
+          transform: translateY(-1px);
+        }
+      }
+    }
+
+    .iconLightContainer {
+      background-color: #fff;
+      @include flexCenter;
+      @include reduce;
+      border: 3px solid #000;
+
+      .lightIcon {
+        @include iconParam;
+        &:hover {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+

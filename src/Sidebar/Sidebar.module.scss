@@ -1,78 +1,78 @@
 .container {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  height: calc(100vh - 10px);
-  width: 400px;
-  z-index: 5;
+  background-color: #111;
+  max-width: max-content;
 }
 
 .innerWrapper {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 20px 40px 10px 0;
+  justify-content: center;
 }
 
-.titleContainer {
-  max-width: 80%;
-  align-self: center;
-  .title {
-    display: flex;
-    flex-direction: column;
-
-    font-size: 28px;
-    font-weight: 500;
-    color: #2e2e2e;
-    gap: 10px;
-
-    .name {
-      text-align: right;
-    }
-
-    .decorations {
-      align-self: flex-end;
-      width: 40%;
-      border: 1px solid #2e2e2e;
-    }
-
-  }
-}
-
-.items {
-  align-self: center;
+.navigate {
+  min-width: min-content;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  font-size: 26px;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3rem;
+
+
   .item {
-    list-style: none;
-
-    .link {
-      text-decoration: none;
-      color: #2e2e2e;
-    }
-  }
-}
-
-.socialContainer {
-  display: flex;
-  flex-direction: column;
-
-  .socialItems {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background-color: #cecccc;
+    border-radius: 50%;
+    list-style: none;
+    transition: padding ease-in-out .4s;
 
-    .socialItem {
-      list-style: none;
 
-      .socialImg {
-        width: 40px;
-        height: 40px;
+    .navTitle {
+      font-size: 0;
+      color: white;
+    }
+
+    &:hover {
+      padding: 2rem;
+      gap: 1rem;
+      width: auto;
+      border-radius: 3rem;
+      background-color: #fbb400;
+      transition: padding ease-in-out .4s;
+
+      .navTitle {
+        font-size: 1.8rem;
       }
+
+    }
+
+    .linkFlex {
+      position: relative;
+
+
+      .navIcon {
+        width: 3rem;
+        height: 3rem;
+      }
+
     }
   }
 
+  .active {
+    background-color: #fbb400;
+  }
+}
+
+
+@keyframes padding {
+  0% {
+    padding-right: 0;
+  }
+
+  100% {
+    padding-right: 2rem;
+  }
 }

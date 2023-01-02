@@ -1,70 +1,28 @@
 .container {
+  min-height: 100%;
   position: relative;
-  height: calc(100vh - 10px);
   display: flex;
   align-items: center;
-  //justify-content: center;
-  overflow: hidden;
-}
 
-.avatarContainer {
-  overflow: hidden;
-  transform: translateX(100px);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
+  .figure {
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    min-height: 100vh;
+    width: 70rem;
+    background: #fbb400;
+    clip-path: polygon(0 0, 29% 0, 70% 100%, 0% 100%);
 
-.avatar {
-  width: 900px;
-  height: auto;
-}
-
-.titleWrapper {
-  display: flex;
-  flex-direction: column;
-  margin-left: 300px;
-}
-
-.titleContainer {
-  max-width: max-content;
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  font-size: 46px;
-  font-weight: 600;
-  margin-bottom: 40px;
-
-  .decoration {
-    font-weight: 400;
+    z-index: -1;
   }
 
-  .upperTitle {
-    align-self: center;
-  }
-}
-
-.linkContainer {
-  max-width: max-content;
-  align-self: center;
-
-  display: flex;
-  gap: 30px;
-
-  .linkWrapper {
-    width: 170px;
-    text-align: center;
-    padding: 10px 0;
-    background-color: #fff;
-    border-radius: 10px;
-    .link {
-      font-size: 22px;
-      text-decoration: none;
-      color: #000;
-    }
   }
 
-}
+
+
+
+
+
 
 
 

@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html {
+    font-size: 62.5%;
+}
 
 * {
     box-sizing: border-box;
@@ -6,32 +10,47 @@
     padding: 0;
 }
 
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 body {
-    background-color: #fff;
-    font-family: 'EB Garamond', serif;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background:  #111;
 }
 
 .container {
-    padding: 10px;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
+    padding: 2rem;
+    margin: 0 auto;
+    min-height: 100vh;
 }
 
 .innerWrapper {
-    width: calc(100% - 400px);
-    background-color: #020202;
-    border-top-right-radius: 30px;
-}
-
-.navBar {
-    min-width: 20%;
-    background-color: #fff;
+    height: 1rem;
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .content {
-    min-width: 80%;
-    background-color: #061416;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    min-height: calc(100vh - 4rem);
+    flex-grow: 2;
+}
+
+
+.navigation {
+    width: max-content;
+    align-self: center;
+}
+
+
+
+.light {
+    background: #fff;
 }

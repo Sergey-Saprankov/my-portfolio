@@ -1,32 +1,26 @@
 import React from "react";
-import s from "./Home.module.scss"
-import avatar from '../img/ava4.png'
-import download from '../img/logo/download.svg'
+import s from './Home.module.scss'
+import ava from './img/ava.png'
 
-export const Home = () => {
+
+export const Home = ({theme}) => {
     return (
         <div className={s.container}>
-            <div></div>
+            <div className={s.figure}></div>
 
-            <div className={s.titleWrapper}>
-                <div className={s.titleContainer}>
-                    <span className={s.upperTitle}>Hello!</span>
-                    <span>I am Sergey Saprankov<span className={s.decoration}>|</span></span>
-                </div>
-                <div className={s.linkContainer}>
-                    <div className={s.linkWrapper}>
-                        <a className={s.link} href="#">
-                          Download CV
-                        </a>
+            <div className={s.titleContainer}>
+                <div className={s.wrapperTitle}>
+                    <div className={s.decoration}>
+
                     </div>
-                    <div className={s.linkWrapper}>
-                        <a className={s.link} href="#">Contact me</a>
+                    <div className={s.innerWrapper}>
+                        <p className={s.name}>I'm Sergey Saprankov.</p>
+                        <h1 className={theme ? s.title : `${s.title} ${s.darkTitle}`}>frontend developer</h1>
                     </div>
                 </div>
-
-            </div>
-            <div className={s.avatarContainer}>
-                <img className={s.avatar} src={avatar} alt="avatar"/>
+                <p className={theme ? s.description : `${s.description} ${s.light}`}>I'm a Belarusian based front‑end
+                    developer focused on crafting clean & user‑friendly experiences, I am passionate about building
+                    excellent software that improves the lives of those around me.</p>
             </div>
         </div>
     )

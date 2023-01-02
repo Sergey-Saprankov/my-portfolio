@@ -1,0 +1,58 @@
+@mixin reduce {
+  width: 49px;
+  height: 49px;
+  border-radius: 50%;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navContainer {
+
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: min-content;
+
+  .item {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    @include flexCenter;
+    background-color:  #111;
+
+    .navLink {
+      @include reduce;
+      @include flexCenter;
+      border: 3px solid #000;
+
+      &:hover {
+        width: 300px;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .active {
+    background-color: #fbb400;
+    @include reduce;
+    @include flexCenter;
+    border: 3px solid #000;
+  }
+}
+
+.light {
+  width: 24px;
+  height: 24px;
+}
+
+.dark {
+  width: 24px;
+  height: 24px;
+}

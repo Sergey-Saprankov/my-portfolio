@@ -1,56 +1,51 @@
-import React from "react";
+import React, {useState} from 'react';
 import s from './Sidebar.module.scss'
-import telegram from '../img/logo/Telegram.png'
-import git from '../img/logo/GitHub.png'
-import gmail from '../img/logo/Gmail.png'
-import linkedin from '../img/logo/Linkedin.png'
+import home from './icon/home.svg'
+import skills from './icon/skills.svg'
+import portfolio from './icon/portfolio.svg'
+import contacts from './icon/contacts.svg'
+import {NavLink} from "react-router-dom";
 
-export const Sidebar = () => {
+const Sidebar = () => {
+    const [active, setActive] = useState('home')
     return (
         <div className={s.container}>
             <div className={s.innerWrapper}>
-                <div className={s.titleContainer}>
-                    <h1 className={s.title}>
-                        <span className={s.name}>Sergey Saprankov</span>
-                        <span>Frontend developer</span>
-                        <div className={s.decorations}></div>
-                    </h1>
-                </div>
-                <ul className={s.items}>
-                    <li className={s.item}><a className={s.link} href="#">Home</a></li>
-                    <li className={s.item}><a className={s.link} href="#">Skills</a></li>
-                    <li className={s.item}><a className={s.link} href="#"></a>Portfolio</li>
-                    <li className={s.item}><a className={s.link} href="#"></a>Contacts</li>
+                <ul className={s.navigate}>
+                    <NavLink onClick={() => setActive('home')}  to={"/"} >
+                        <li className={active ? `${s.item} ${s.active}` : s.item}>
+                            <h2 className={s.navTitle}>Home</h2>
+                            <div className={s.linkFlex}>
+                                <img className={s.navIcon} src={home} alt="home icon"/>
+                            </div>
+                        </li>
+                    </NavLink>
+                    <li className={s.item}>
+                        <h2 className={s.navTitle}>Skills</h2>
+                        <div className={s.linkFlex}>
+
+                            <img className={s.navIcon} src={skills} alt="skills icon"/>
+
+                        </div>
+                    </li>
+                    <li className={s.item}>
+                        <h2 className={s.navTitle}>Portfolio</h2>
+                        <div className={s.linkFlex}>
+
+                                <img className={s.navIcon} src={portfolio} alt="skills icon"/>
+
+                        </div>
+                    </li>
+                    <li className={s.item}>
+                        <h2 className={s.navTitle}>Contacts</h2>
+                        <div className={s.linkFlex}>
+                                <img className={s.navIcon} src={contacts} alt="skills icon"/>
+                        </div>
+                    </li>
                 </ul>
-                <div className={s.socialContainer}>
-                    <ul className={s.socialItems}>
-                        <li className={s.socialItem}>
-                            <a href="#">
-                                <img className={s.socialImg} src={telegram} alt="telegram"/>
-                            </a>
-                        </li>
-                        <li className={s.socialItem}>
-                            <a href="#">
-                                <img className={s.socialImg} src={git} alt="git"/>
-                            </a>
-                        </li>
-                        <li className={s.socialItem}>
-                            <a href="#">
-                                <img className={s.socialImg}  src={gmail} alt="gmail"/>
-                            </a>
-                        </li>
-                        <li className={s.socialItem}>
-                            <a href="#">
-                                <img className={s.socialImg} src={linkedin} alt="linkedin"/>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div>
-
-                    </div>
-                </div>
             </div>
         </div>
-    )
-}
+    );
+};
+
+export default Sidebar;
